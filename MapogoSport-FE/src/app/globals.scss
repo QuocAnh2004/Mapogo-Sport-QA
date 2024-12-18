@@ -1,0 +1,189 @@
+.packageUpdate {
+    width: 100%;
+    margin: auto;
+    box-shadow: 2px 2px #e2dfdf;
+    height: auto;
+    border-radius: 0;
+    border: 1px solid black;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .body-package {
+        padding: 10px;
+        margin: 0 10px;
+        border-top: 2px solid silver;
+        border-bottom: 2px solid silver;
+
+        div {
+            margin: 5px 0;
+        }
+    }
+
+    .btn-sub {
+        background-color: #142239;
+        border: 1px solid #142239;
+        margin: 10px 20px;
+
+        &:hover {
+            background-color: white;
+            color: black;
+            font-weight: 700;
+        }
+    }
+}
+
+// SEARCH SPORT
+.search-sport {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/soccer-ball-goal.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .body-search-sport {
+        width: 1600px;
+        margin: 90px 0;
+    }
+}
+
+.custom-border {
+    position: relative;
+    text-align: center;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 5px; // Độ dày của viền
+        height: 50%; // Độ dài viền tùy chỉnh, bạn có thể điều chỉnh
+        background-color: #6c757d; // Màu viền
+    }
+
+    &::before {
+        left: 0;
+        top: 25%; // Canh giữa
+    }
+
+    &::after {
+        right: 0;
+        top: 25%; // Canh giữa
+    }
+}
+
+.backdrop {
+    display: flex;
+    min-height: 730px;
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    color: white;
+    background: linear-gradient(200deg, rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, .4) 90%);
+
+    .owner-content {
+        align-self: center;
+        margin: 0 auto;
+        width: 100%;
+
+        .img-div {
+            position: absolute;
+            inset: 0px;
+            overflow: hidden;
+
+            .img-content {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                inset: 0px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 50% center;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(200deg, rgba(10, 10, 10, 0) 70%, rgba(10, 10, 10, 0.4) 90%);
+                    z-index: 1;
+                }
+            }
+        }
+
+        .main-container {
+            position: relative;
+            margin-left: 100px;
+
+            .content-container {
+                .mediapromo-heading {
+                    .mediapromo-title {
+                        text-transform: uppercase;
+                        font-size: 100px;
+                        line-height: 140px;
+                    }
+
+                    .mediapromo-subtitle {
+                        margin-bottom: 38px;
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 500;
+                    }
+                }
+
+                .mediapromo-links {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    .btn-dcszsa {
+                        color: white;
+                        background-color: #142239;
+                        padding: 19px 32px;
+                        text-decoration: none;
+                        position: relative;
+                        overflow: hidden;
+                        display: inline-block;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    
+                        .cta-content {
+                            position: relative;
+                            z-index: 1;
+                        }
+                    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background-color: white;
+                            z-index: 0;
+                            transition: transform 0.5s ease;
+                            transform: translateX(0);
+                        }
+                    
+                        &:hover {
+                            color: black;
+                        }
+                    
+                        &:hover::before {
+                            transform: translateX(100%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
